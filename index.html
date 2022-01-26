@@ -4,10 +4,38 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Weather App</title>
   </head>
   <body>
+    <div class="container">
+      <div class="card-body">
+        <div class="row">
+          <div class="col">
+            <input type="text" placeholder="Enter a city" />
+            <button id="search-btn" class="search-btn">Search</button>
+          </div>
+          <div class="col">
+            <h1>Bangkok</h1>
+            <p>Wednesday 20:40</p>
+            <p>Clear sky</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <h2>29 °C</h2>
+            <img src="/images/01n@2x.png" alt="clear sky" />
+          </div>
+          <div class="col">Humidity: 99% Wind: 4km/hr</div>
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
