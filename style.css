@@ -82,6 +82,18 @@ input {
 .search-btn {
   padding: 0.5em 1em;
   cursor: pointer;
+  background: #8a2be2;
+  color: #fff;
+  transform: scale(1);
+  transition: all 200ms ease-in-out;
+  margin-top: 3px;
+}
+
+.search-btn:hover,
+.search-btn:focus {
+  background: #fff;
+  color: #8a2be2;
+  transform: scale(1.06);
 }
 
 .temperature {
