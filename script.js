@@ -1,6 +1,5 @@
-// const apiKey = `2fc59c88fa863e451b6f4e4accf6d955`;
+const apiKey = `2fc59c88fa863e451b6f4e4accf6d955`;
 const cityInput = document.getElementById('city-input');
-// const searchBtn = document.getElementById('search-btn');
 const form = document.getElementById('form');
 const cityName = document.getElementById('city-name');
 const temperature = document.querySelector('.temperature');
@@ -10,16 +9,17 @@ const weatherDescription = document.getElementById('weather-description');
 const feelsLike = document.getElementById('feels-like');
 const weatherIcon = document.getElementById('weather-icon');
 const time = document.getElementById('time');
+const currentDay = document.getElementById('day');
 
 //=================DEFAULT CITY=================
 defaultCity('Phuket');
 
 function defaultCity(city) {
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2fc59c88fa863e451b6f4e4accf6d955&units=metric`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
 
-//=====================DEFAULT CITY=====================
+//=====================DISPLAY WEATHER=====================
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -28,7 +28,7 @@ form.addEventListener('submit', (event) => {
 
 function findCity() {
   const city = cityInput.value;
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=2fc59c88fa863e451b6f4e4accf6d955&units=metric`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
 
@@ -60,3 +60,18 @@ function updateTime() {
 }
 
 updateTime();
+
+//===============DAY===============
+
+const daysOfWeek = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
+const date = new Date();
+let day = daysOfWeek[date.getDay()];
+currentDay.textContent = day;
