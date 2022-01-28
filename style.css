@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  background: linear-gradient(45deg, red, blue);
+  background: linear-gradient(45deg, #70a0a4, #8a2be2);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
@@ -26,8 +26,7 @@ p {
 
 .signature {
   text-align: center;
-
-  color: #cab6b6;
+  color: #d3ddd3;
   margin: -40px;
 }
 
@@ -37,7 +36,7 @@ p {
   border: 2px solid;
   border-radius: 30px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  background: #cab6b6;
+  background: #d3ddd3;
   padding: 20px 30px;
 }
 
@@ -78,6 +77,10 @@ input {
 .temperature {
   font-size: 3rem;
   opacity: 0.7;
+}
+
+h1 {
+  color: #8a2be2;
 }
 
 h2 {
