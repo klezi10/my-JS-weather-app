@@ -10,6 +10,7 @@ const feelsLike = document.getElementById('feels-like');
 const weatherIcon = document.getElementById('weather-icon');
 const time = document.getElementById('time');
 const currentDay = document.getElementById('day');
+const geolocationBtn = document.getElementById('geolocation');
 
 //====================TIME ==================
 
@@ -61,7 +62,7 @@ function findCity() {
 }
 
 function displayWeather(response) {
-  console.log(response.data);
+  // console.log(response.data);
   const description = response.data.weather[0].description;
   const icon = response.data.weather[0].icon;
 
@@ -75,3 +76,15 @@ function displayWeather(response) {
   <img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" />
   `;
 }
+
+//=================GEOLOCATION ==================
+
+geolocationBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition((position) => {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(displayWeather);
+  });
+});
