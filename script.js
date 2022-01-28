@@ -7,6 +7,7 @@ const temperature = document.querySelector('.temperature');
 const humidity = document.getElementById('humidity');
 const wind = document.getElementById('wind');
 const weatherDescription = document.getElementById('weather-description');
+const feelsLike = document.getElementById('feels-like');
 
 //=================DEFAULT CITY=================
 defaultCity('Phuket');
@@ -36,4 +37,5 @@ function displayWeather(response) {
   humidity.textContent = response.data.main.humidity;
   wind.textContent = Math.round(response.data.wind.speed);
   weatherDescription.textContent = response.data.weather[0].description;
+  feelsLike.textContent = Math.round(response.data.main.feels_like);
 }
