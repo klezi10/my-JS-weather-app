@@ -24,19 +24,19 @@ p {
   opacity: 0.7;
 }
 
-.signature {
+.footer {
   text-align: center;
   color: #d3ddd3;
   margin: -40px;
   font-size: 0.8rem;
 }
 
-.signature a {
+.footer a {
   color: #9fd6db;
 }
 
-.signature a:hover,
-.signature a:focus {
+.footer a:hover,
+.footer a:focus {
   color: blue;
 }
 
