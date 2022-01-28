@@ -4,12 +4,12 @@
 
 body {
   margin: 0;
+  padding-top: 50px;
   font-family: 'Open Sans', sans-serif;
   background: linear-gradient(45deg, #70a0a4, #8a2be2);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  overflow: hidden;
 }
 
 h2 {
@@ -26,9 +26,9 @@ p {
 }
 
 .footer {
-  text-align: center;
   color: #d3ddd3;
-  margin: -40px;
+  text-align: center;
+  margin-top: 5px;
   font-size: 0.8rem;
 }
 
@@ -41,8 +41,8 @@ p {
   color: blue;
 }
 
-.container {
-  margin: 50px auto;
+.card-body {
+  margin: 0 auto;
   max-width: 600px;
   border-radius: 30px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
