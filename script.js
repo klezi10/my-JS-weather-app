@@ -33,14 +33,17 @@ function findCity() {
 
 function displayWeather(response) {
   console.log(response.data);
+  const description = response.data.weather[0].description;
+  const icon = response.data.weather[0].icon;
+
   cityName.textContent = response.data.name;
   temperature.textContent = Math.round(response.data.main.temp);
   humidity.textContent = response.data.main.humidity;
   wind.textContent = Math.round(response.data.wind.speed);
-  const description = response.data.weather[0].description;
+
   weatherDescription.textContent = description;
   feelsLike.textContent = Math.round(response.data.main.feels_like);
-  const icon = response.data.weather[0].icon;
+
   weatherIcon.innerHTML = `
   <img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" />
   `;
