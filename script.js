@@ -11,6 +11,34 @@ const weatherIcon = document.getElementById('weather-icon');
 const time = document.getElementById('time');
 const currentDay = document.getElementById('day');
 
+//====================TIME ==================
+
+function updateTime() {
+  const currentTime = new Date().toLocaleTimeString([], {
+    hour: '2-digit',
+    hour12: false,
+    minute: '2-digit',
+  });
+  time.textContent = currentTime;
+}
+
+updateTime();
+
+//===============DAY===============
+
+const daysOfWeek = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
+const date = new Date();
+let day = daysOfWeek[date.getDay()];
+currentDay.textContent = day;
+
 //=================DEFAULT CITY=================
 defaultCity('Phuket');
 
@@ -47,31 +75,3 @@ function displayWeather(response) {
   <img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" />
   `;
 }
-
-//====================TIME ==================
-
-function updateTime() {
-  const currentTime = new Date().toLocaleTimeString([], {
-    hour: '2-digit',
-    hour12: false,
-    minute: '2-digit',
-  });
-  time.textContent = currentTime;
-}
-
-updateTime();
-
-//===============DAY===============
-
-const daysOfWeek = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-];
-const date = new Date();
-let day = daysOfWeek[date.getDay()];
-currentDay.textContent = day;
