@@ -9,6 +9,7 @@ const wind = document.getElementById('wind');
 const weatherDescription = document.getElementById('weather-description');
 const feelsLike = document.getElementById('feels-like');
 const weatherIcon = document.getElementById('weather-icon');
+const time = document.getElementById('time');
 
 //=================DEFAULT CITY=================
 defaultCity('Phuket');
@@ -40,11 +41,22 @@ function displayWeather(response) {
   temperature.textContent = Math.round(response.data.main.temp);
   humidity.textContent = response.data.main.humidity;
   wind.textContent = Math.round(response.data.wind.speed);
-
   weatherDescription.textContent = description;
   feelsLike.textContent = Math.round(response.data.main.feels_like);
-
   weatherIcon.innerHTML = `
   <img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" />
   `;
 }
+
+//====================TIME ==================
+
+function updateTime() {
+  const currentTime = new Date().toLocaleTimeString([], {
+    hour: '2-digit',
+    hour12: false,
+    minute: '2-digit',
+  });
+  time.textContent = currentTime;
+}
+
+updateTime();
