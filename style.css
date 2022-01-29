@@ -135,3 +135,19 @@ h2 {
 #weather-description {
   text-transform: capitalize;
 }
+
+.five-day-forecast {
+  display: flex;
+  justify-content: space-between;
+}
+
+.five-day-forecast p {
+  text-align: center;
+  /* padding: 2px; */
+}
+
+.five-day-forecast img {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
