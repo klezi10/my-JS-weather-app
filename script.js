@@ -25,7 +25,7 @@ function updateTime() {
 
 updateTime();
 
-//===============DAY===============
+//===============CURRENT DAY===============
 
 const daysOfWeek = [
   'Sunday',
@@ -37,7 +37,8 @@ const daysOfWeek = [
   'Saturday',
 ];
 const date = new Date();
-let day = daysOfWeek[date.getDay()];
+const day = daysOfWeek[date.getDay()];
+
 currentDay.textContent = day;
 
 //=================DEFAULT CITY=================
@@ -95,9 +96,23 @@ function getForecast(coords) {
   axios.get(apiUrl).then(displayForecast);
 }
 
+function formatDay(timestamp) {
+  const daysOfWeek = [
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+  ];
+  const date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  return daysOfWeek[day];
+}
+
 function displayForecast(response) {
   let forecastArray = response.data.daily;
-  console.log(forecastArray);
 
   let forecastEl = document.querySelector('.five-day-forecast');
 
@@ -109,8 +124,10 @@ function displayForecast(response) {
     if (index < 5) {
       forecastHTML += `
       <div class="col">
-            <p>Sunday</p>
-            <img src="/images/01n@2x.png" alt="clear sky" />
+            <p>${formatDay(forecastDay.dt)}</p>
+            <img src="http://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png" alt="${forecastDay.weather[0].description}" />
             <p><strong>${Math.round(
               forecastDay.temp.max
             )}°</strong> / ${Math.round(forecastDay.temp.min)}°</p>
