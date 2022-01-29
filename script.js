@@ -77,6 +77,7 @@ function displayWeather(response) {
   <img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" />
   `;
   getForecast(response.data.coord);
+  cityInput.value = '';
 }
 
 //=================GEOLOCATION ==================
