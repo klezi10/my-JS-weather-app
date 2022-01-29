@@ -13,7 +13,7 @@ const currentDay = document.getElementById('day');
 const geolocationBtn = document.getElementById('geolocation');
 const forecastEl = document.querySelector('.five-day-forecast');
 
-//====================TIME ==================
+//TIME
 
 function updateTime() {
   const currentTime = new Date().toLocaleTimeString([], {
@@ -26,7 +26,7 @@ function updateTime() {
 
 updateTime();
 
-//===============CURRENT DAY===============
+//CURRENT DAY
 
 const daysOfWeek = [
   'Sunday',
@@ -42,7 +42,7 @@ const day = daysOfWeek[date.getDay()];
 
 currentDay.textContent = day;
 
-//=====================DISPLAY WEATHER=====================
+//DISPLAY WEATHER
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -74,7 +74,7 @@ function displayWeather(response) {
   cityInput.value = '';
 }
 
-//=================GEOLOCATION ==================
+//GEOLOCATION
 
 geolocationBtn.addEventListener('click', (event) => {
   event.preventDefault();
