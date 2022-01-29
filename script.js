@@ -42,29 +42,22 @@ const day = daysOfWeek[date.getDay()];
 
 currentDay.textContent = day;
 
-//=================DEFAULT CITY=================
-defaultCity('Phuket');
-
-function defaultCity(city) {
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeather);
-}
-
 //=====================DISPLAY WEATHER=====================
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  findCity();
+  const city = cityInput.value;
+  findCity(city);
 });
 
-function findCity() {
-  const city = cityInput.value;
+function findCity(city) {
   const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 }
 
+findCity('Phuket');
+
 function displayWeather(response) {
-  // console.log(response.data);
   const description = response.data.weather[0].description;
   const icon = response.data.weather[0].icon;
 
