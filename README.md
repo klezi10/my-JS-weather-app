@@ -46,4 +46,4 @@ The forecast was quite challenging. I learned to use the forEach loop to copy ea
 
 ### Continued development
 
-I want to refactor my code and continue working with APIs. I would like to add error handling to the API calls.
+I would like to add error handling to the API calls and continue working with APIs.

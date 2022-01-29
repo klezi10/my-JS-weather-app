@@ -11,6 +11,7 @@ const weatherIcon = document.getElementById('weather-icon');
 const time = document.getElementById('time');
 const currentDay = document.getElementById('day');
 const geolocationBtn = document.getElementById('geolocation');
+const forecastEl = document.querySelector('.five-day-forecast');
 
 //====================TIME ==================
 
@@ -113,9 +114,7 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  let forecastArray = response.data.daily;
-
-  let forecastEl = document.querySelector('.five-day-forecast');
+  const forecastArray = response.data.daily;
 
   let forecastHTML = `
   <div class="five-day-forecast row">
