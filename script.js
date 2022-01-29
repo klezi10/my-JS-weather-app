@@ -75,6 +75,7 @@ function displayWeather(response) {
   weatherIcon.innerHTML = `
   <img src="http://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" />
   `;
+  getForecast(response.data.coord);
 }
 
 //=================GEOLOCATION ==================
@@ -88,3 +89,35 @@ geolocationBtn.addEventListener('click', (event) => {
     axios.get(apiUrl).then(displayWeather);
   });
 });
+
+function getForecast(coords) {
+  const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  let forecastArray = response.data.daily;
+  console.log(forecastArray);
+
+  let forecastEl = document.querySelector('.five-day-forecast');
+
+  let forecastHTML = `
+  <div class="five-day-forecast row">
+  `;
+
+  forecastArray.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML += `
+      <div class="col">
+            <p>Sunday</p>
+            <img src="/images/01n@2x.png" alt="clear sky" />
+            <p><strong>${Math.round(
+              forecastDay.temp.max
+            )}°</strong> / ${Math.round(forecastDay.temp.min)}°</p>
+          </div>
+      `;
+    }
+  });
+  forecastHTML += `</div>`;
+  forecastEl.innerHTML = forecastHTML;
+}
