@@ -12,33 +12,22 @@ body {
   height: 100vh;
 }
 
+h1 {
+  color: #8a2be2;
+}
+
 h2 {
   margin: 0;
   margin-right: 30px;
   align-self: center;
-  opacity: 0.7;
+  opacity: 0.6;
+  display: flex;
 }
 
 p {
   margin: 0;
   line-height: 1.5em;
   opacity: 0.7;
-}
-
-.footer {
-  color: #d3ddd3;
-  text-align: center;
-  margin-top: 5px;
-  font-size: 0.8rem;
-}
-
-.footer a {
-  color: #9fd6db;
-}
-
-.footer a:hover,
-.footer a:focus {
-  color: blue;
 }
 
 .card-body {
@@ -117,20 +106,10 @@ button:focus {
 
 .temperature {
   font-size: 3rem;
-  opacity: 0.7;
-}
-
-h1 {
-  color: #8a2be2;
-}
-
-h2 {
-  display: flex;
 }
 
 .degree-unit {
   margin: 7px 0 0 7px;
-  opacity: 0.7;
 }
 
 #weather-description {
@@ -154,4 +133,20 @@ h2 {
 
 hr {
   border-top: 1.7px solid #70a0a4;
+}
+
+.footer {
+  color: #d3ddd3;
+  text-align: center;
+  margin-top: 5px;
+  font-size: 0.8rem;
+}
+
+.footer a {
+  color: #9fd6db;
+}
+
+.footer a:hover,
+.footer a:focus {
+  color: blue;
 }
