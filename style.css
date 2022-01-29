@@ -130,6 +130,7 @@ h2 {
 
 .degree-unit {
   margin: 7px 0 0 7px;
+  opacity: 0.7;
 }
 
 #weather-description {
@@ -143,11 +144,14 @@ h2 {
 
 .five-day-forecast p {
   text-align: center;
-  /* padding: 2px; */
 }
 
 .five-day-forecast img {
   width: 60%;
   display: block;
   margin: 0 auto;
+}
+
+hr {
+  border-top: 1.7px solid #70a0a4;
 }
