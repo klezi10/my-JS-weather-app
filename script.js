@@ -92,15 +92,7 @@ function getForecast(coords) {
 }
 
 function formatDay(timestamp) {
-  const daysOfWeek = [
-    'Sunday',
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-  ];
+  const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const date = new Date(timestamp * 1000);
   let day = date.getDay();
   return daysOfWeek[day];
