@@ -42,7 +42,7 @@ Users should be able to:
 
 ### What I learned
 
-The forecast was quite challenging. I learned to use the forEach loop to copy each forecast day multiple times. I also learned how to convert Unix day to a legible format.
+I learned to use the forEach loop to copy each forecast day multiple times. I also learned how to convert Unix day to a legible format.
 
 ### Continued development
 
