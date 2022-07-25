@@ -39,6 +39,7 @@ Users should be able to:
 - Flexbox
 - Vanilla JavaScript
 - API integration
+- Responsive
 
 ### What I learned
 
