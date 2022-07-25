@@ -158,3 +158,23 @@ hr {
 .footer a:focus {
   color: blue;
 }
+
+@media (max-width: 360px) {
+  .feels-like-content {
+    display: none;
+  }
+}
+
+@media (max-width: 450px) {
+  .card-body {
+    margin: 0 5px;
+  }
+
+  .feels-like-content {
+    font-size: 0.8rem;
+  }
+
+  .temperature {
+    font-size: 2rem;
+  }
+}
